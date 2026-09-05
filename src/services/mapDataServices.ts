@@ -100,5 +100,38 @@ export class GeoPortDataService implements IPortDataService {
   }
 }
 
+export class GeoLogisticsTelemetryService implements ILogisticsTelemetryService {
+  async getActiveShipmentTracking(shipmentId: string): Promise<LogisticsTelemetryPoint> {
+    if (shipmentId === 'shp-4521') {
+      return {
+        shipmentId: 'shp-4521',
+        currentLat: 11.8,
+        currentLng: 85.2,
+        speedKnots: 11.4,
+        headingDeg: 280,
+        carrier: 'MV EVER BRAVE (Evergreen Marine)',
+        lastPingTimestamp: '2026-09-05T04:30:00Z'
+      };
+    }
+    return {
+      shipmentId,
+      currentLat: 6.9,
+      currentLng: 79.8,
+      speedKnots: 16.8,
+      headingDeg: 340,
+      carrier: 'APL COLOMBO (CMA CGM)',
+      lastPingTimestamp: '2026-09-05T04:30:00Z'
+    };
+  }
+
+  async getVesselPositions(): Promise<LogisticsTelemetryPoint[]> {
+    return [
+      await this.getActiveShipmentTracking('shp-4521'),
+      await this.getActiveShipmentTracking('shp-4522')
+    ];
+  }
+}
+
 export const weatherService = new GeoWeatherService();
 export const portDataService = new GeoPortDataService();
+export const logisticsService = new GeoLogisticsTelemetryService();

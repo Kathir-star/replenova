@@ -102,6 +102,7 @@ export const CommandCenterView: React.FC<CommandCenterViewProps> = ({
         routes={routes}
         disruptions={disruptions}
         onNavigateToTab={onNavigateToTab}
+        onSelectProductForReplenishment={onSelectProductForReplenishment}
       />
 
       {/* AI Impact Engine: Real-time Cascade Propagation Visualizer */}
