@@ -1,0 +1,6 @@
+{
+  "name": "REPLENOVA",
+  "description": "Predict Disruptions. Prevent Stockouts. Replenish Intelligently. AI-powered supply-chain disruption intelligence and replenishment control tower.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

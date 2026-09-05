@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-display: 'Chakra Petch', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #050505;
+    color: #D1D1D1;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar for Sleek Interface */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1F1F1F;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2A2A2A;
+}
+
+/* Sleek radial dot grid canvas pattern */
+.bg-sleek-grid {
+  background-image: radial-gradient(#1A1A1A 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.glass-panel {
+  background: #0A0A0A;
+  border: 1px solid #1F1F1F;
+}
+
+.glass-panel-hover {
+  transition: all 0.15s ease-in-out;
+}
+.glass-panel-hover:hover {
+  background: #111111;
+  border-color: #2A2A2A;
+}
+
+.font-display {
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Leaflet Dark Enterprise Theme */
+.leaflet-container {
+  background-color: #050505 !important;
+  font-family: var(--font-sans);
+  color: #D1D1D1;
+}
+
+.leaflet-tile {
+  filter: brightness(0.88) contrast(1.15) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0A0A0A !important;
+  color: #D1D1D1 !important;
+  border: 1px solid #1F1F1F !important;
+  border-radius: 4px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8), 0 8px 10px -6px rgba(0, 0, 0, 0.8) !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-tip {
+  background: #0A0A0A !important;
+  border: 1px solid #1F1F1F !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-close-button {
+  color: #888888 !important;
+  top: 8px !important;
+  right: 8px !important;
+  font-size: 16px !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #FFFFFF !important;
+}
+
+/* Custom Marker Divs */
+.custom-geo-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Animated shipping route line flows */
+@keyframes route-flow-fast {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes route-flow-slow {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.route-dash-normal {
+  stroke-dasharray: 8, 6;
+  animation: route-flow-fast 1.6s linear infinite;
+}
+
+.route-dash-delayed {
+  stroke-dasharray: 6, 6;
+  animation: route-flow-slow 3.2s linear infinite;
+}
+
+.route-dash-alternative {
+  stroke-dasharray: 10, 6;
+  animation: route-flow-fast 2s linear infinite;
+}
+
+/* Cyclone radar pulse animation */
+@keyframes cyclone-wave {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0.55;
+  }
+}
+
+.cyclone-radar-wave {
+  animation: cyclone-wave 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
